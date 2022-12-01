@@ -1806,7 +1806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorHinge: {fileID: 956609302}
   player: {fileID: 473533006}
-  openDoorDegrees: {x: 0, y: 90, z: 0}
+  openDoorDegrees: {x: 0, y: 45, z: 0}
   flagofentering: 0
 --- !u!1 &1953071871
 GameObject:

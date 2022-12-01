@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    public GameObject doorHinge;
-    public Vector3 openDoorDegrees;
+
+    public Animator doorAnimator;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,20 +22,21 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("triggered");
-        OpenDoor();
+        if (other.gameObject.CompareTag("Players")) 
+        {
+            doorAnimator.SetTrigger("openDoor");
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("untriggered");
 
     }
 
 
     public void OpenDoor() 
     {
-        doorHinge.GetComponent<Transform>().Rotate(openDoorDegrees, Space.World);
+        
     }
 
 

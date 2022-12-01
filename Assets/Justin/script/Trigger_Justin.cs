@@ -8,6 +8,7 @@ public class Trigger_Justin : MonoBehaviour
     public GameObject player;
     public Vector3 openDoorDegrees;
     public int flagofentering;
+    bool open = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +18,13 @@ public class Trigger_Justin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        OpenDoor();
     }
 
     private void OnTriggerEnter(Collider player)
     {
         Debug.Log("triggered");
-        OpenDoor();
+        open = true;
         flagofentering = 1;
 
     }
@@ -36,13 +37,23 @@ public class Trigger_Justin : MonoBehaviour
             closeDoor();
             flagofentering = 0;
         }
+
+        open = false;
         
 
     }
 
     public void OpenDoor()
     {
-        doorHinge.GetComponent<Transform>().Rotate(openDoorDegrees, Space.Self);
+        if (doorHinge.GetComponent<Transform>().rotation.eulerAngles.y < 180f) 
+        {
+            if (open) 
+            {
+                doorHinge.GetComponent<Transform>().Rotate(openDoorDegrees * Time.deltaTime, Space.Self);
+            }
+            
+        }
+        
     }
     public void closeDoor()
     {
