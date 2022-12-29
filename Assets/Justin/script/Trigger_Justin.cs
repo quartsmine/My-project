@@ -28,21 +28,15 @@ public class Trigger_Justin : MonoBehaviour
         dooranim.SetTrigger("isdoortriger");
 
     }
-    /*
+    
     private void OnTriggerExit(Collider player)
     {
         Debug.Log("untriggered");
-        if (flagofentering==1)
-        {
-            closeDoor();
-            flagofentering = 0;
-        }
+        dooranim.SetTrigger("isdoortrigger");
 
-        open = false;
-        
 
     }
-
+/*
     public void OpenDoor()
     {
         if (doorHinge.GetComponent<Transform>().rotation.eulerAngles.y < 180f) 
