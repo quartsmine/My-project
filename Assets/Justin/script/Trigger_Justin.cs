@@ -9,6 +9,7 @@ public class Trigger_Justin : MonoBehaviour
     public Vector3 openDoorDegrees;
     public int flagofentering;
     bool open = false;
+    public Animator dooranim;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +19,16 @@ public class Trigger_Justin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OpenDoor();
+        
     }
 
-    private void OnTriggerEnter(Collider player)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("triggered");
-        open = true;
-        flagofentering = 1;
+        dooranim.SetTrigger("isdoortriger");
 
     }
-
+    /*
     private void OnTriggerExit(Collider player)
     {
         Debug.Log("untriggered");
@@ -59,4 +59,5 @@ public class Trigger_Justin : MonoBehaviour
     {
         doorHinge.GetComponent<Transform>().Rotate(-openDoorDegrees, Space.Self);
     }
+    */
 }

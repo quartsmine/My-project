@@ -646,6 +646,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 956609303}
+  - component: {fileID: 956609304}
   m_Layer: 0
   m_Name: door hinge
   m_TagString: Untagged
@@ -669,6 +670,26 @@ Transform:
   m_Father: {fileID: 2095314737}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!95 &956609304
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956609302}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb70de25330575b478529330ebfd617e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1728,7 @@ GameObject:
   - component: {fileID: 1943506738}
   - component: {fileID: 1943506737}
   - component: {fileID: 1943506741}
+  - component: {fileID: 1943506742}
   m_Layer: 0
   m_Name: door triggerbox
   m_TagString: Untagged
@@ -1808,6 +1830,27 @@ MonoBehaviour:
   player: {fileID: 473533006}
   openDoorDegrees: {x: 0, y: 45, z: 0}
   flagofentering: 0
+  dooranim: {fileID: 956609304}
+--- !u!95 &1943506742
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943506736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb70de25330575b478529330ebfd617e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1953071871
 GameObject:
   m_ObjectHideFlags: 0
