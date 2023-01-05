@@ -5,6 +5,8 @@ using UnityEngine;
 public class footbalmovement : MonoBehaviour
 {
     public Animator animator;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +18,26 @@ public class footbalmovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            animator.SetFloat("ForwardSpeed", (float)(animator.GetFloat("ForwardSpeed") + 0.2 * Time.deltaTime));
+            if (Input.GetKey(KeyCode.RightShift))
+            {
+                float s = Mathf.Lerp(animator.GetFloat("ForwardSpeed"), 1.1f, 0.01f);
+                animator.SetFloat("ForwardSpeed", s);
+            }
+            else 
+            {
+                float s = Mathf.Lerp(animator.GetFloat("ForwardSpeed"), 0.5f, 0.01f);
+                animator.SetFloat("ForwardSpeed", s);
+            }
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (!Input.GetKey(KeyCode.UpArrow))
         {
-            animator.SetFloat("ForwardSpeed", (float)(animator.GetFloat("ForwardSpeed") - 0.2 * Time.deltaTime));
+            float s = Mathf.Lerp(animator.GetFloat("ForwardSpeed"), 0, 0.01f);
+            animator.SetFloat("ForwardSpeed", s);
         }
+
+
+
         //rightSpeed dont get updated
         if (Input.GetKey(KeyCode.LeftArrow))
         {
