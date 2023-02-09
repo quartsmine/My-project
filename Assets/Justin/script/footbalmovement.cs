@@ -41,12 +41,22 @@ public class footbalmovement : MonoBehaviour
         //rightSpeed dont get updated
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            animator.SetFloat("RightSpeed", (float)(animator.GetFloat("RightSpeed") - 0.5 * Time.deltaTime));
+            float s = Mathf.Lerp(animator.GetFloat("RightSpeed"), -1f, 0.01f);
+            animator.SetFloat("RightSpeed", s);
         }
+        
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            animator.SetFloat("RightSpeed", (float)(animator.GetFloat("RightSpeed") + 0.5 * Time.deltaTime));
+            float s = Mathf.Lerp(animator.GetFloat("RightSpeed"), 1f, 0.01f);
+            animator.SetFloat("RightSpeed", s);
+        }
+
+        
+        if (!Input.GetKey(KeyCode.LeftArrow)|| !Input.GetKey(KeyCode.RightArrow))
+        {
+            float s = Mathf.Lerp(animator.GetFloat("RightSpeed"), 0, 0.01f);
+            animator.SetFloat("RightSpeed", s);
         }
         // Debug.Log(animator.GetFloat("ForwardSpeed"));
         Debug.Log(animator.GetFloat("RightSpeed"));
