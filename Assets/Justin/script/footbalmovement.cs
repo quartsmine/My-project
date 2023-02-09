@@ -52,12 +52,14 @@ public class footbalmovement : MonoBehaviour
             animator.SetFloat("RightSpeed", s);
         }
 
-        
-        if (!Input.GetKey(KeyCode.LeftArrow)|| !Input.GetKey(KeyCode.RightArrow))
+        /*
+        if (!Input.GetKey(KeyCode.LeftArrow) || !Input.GetKey(KeyCode.RightArrow))
         {
             float s = Mathf.Lerp(animator.GetFloat("RightSpeed"), 0, 0.01f);
             animator.SetFloat("RightSpeed", s);
         }
+        */
+        
         // Debug.Log(animator.GetFloat("ForwardSpeed"));
         Debug.Log(animator.GetFloat("RightSpeed"));
     }
