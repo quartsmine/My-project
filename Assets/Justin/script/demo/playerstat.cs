@@ -10,9 +10,11 @@ public class playerstat : MonoBehaviour
     public int health = 3;
     public Text healthCount;
     public Text starCount;
+
+    private UIControl UIManager;
     void Start()
     {
-        
+        UIManager = FindObjectOfType<UIControl>();
     }
 
     // Update is called once per frame
@@ -20,5 +22,15 @@ public class playerstat : MonoBehaviour
     {
         healthCount.text = health.ToString();
         starCount.text = star.ToString();
+        CheckHealth();
+    }
+
+    void CheckHealth() 
+    {
+        if (health <= 0) 
+        {
+            
+            UIManager.GameOver();
+        }
     }
 }
